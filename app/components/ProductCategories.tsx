@@ -2,7 +2,7 @@ import React from 'react'
 import type { ProductCategoryProps } from './ProductCategory'
 import ProductCategory from './ProductCategory'
 
-const productCategories: ProductCategoryProps[] = [
+export const productCategories: ProductCategoryProps[] = [
     {
       category: "Headphones",
       imageUrl: "/assets/categories/image-category-headphones.png",
