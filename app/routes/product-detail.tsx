@@ -31,7 +31,9 @@ const ProductDetail = ({loaderData}: Route.ComponentProps) => {
         <button className='body-text text-black opacity-[50%] px-5 md:px-10 my-5' onClick={()=>navigate(-1)}>Go Back</button>
         <section className='px-5 md:px-10 flex flex-col md:flex-row gap-5 md:gap-16 md:items-center mb-20'>
             <img src={loaderData?.image?.mobile} className='w-full md:hidden h-auto rounded-xl'/>
-            <img src={loaderData?.image?.tablet} className='w-[40%] hidden md:block h-auto object-cover rounded-xl'/>
+            <img src={loaderData?.image?.tablet} className='w-[40%] hidden md:block lg:hidden h-auto object-cover rounded-xl'/>
+            <img src={loaderData?.image?.desktop} className='w-[40%] hidden lg:block h-auto object-cover rounded-xl'/>
+
             <div className='flex flex-col gap-5'>
                 {loaderData?.new &&         <span className='overline-text text-primary'>new product</span>
             }

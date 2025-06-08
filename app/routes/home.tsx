@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import type { Route } from "./+types/home";
 import ProductCategories from "~/components/ProductCategories";
 
@@ -32,7 +33,9 @@ export default function Home() {
               <div className="flex flex-col items-center lg:items-start gap-10">
                 <span className="uppercase font-manrope text-[36px] lg:text-[56px] lg:leading-[58px] leading-[40px] lg:tracking-[2px] tracking-[1.29px] font-bold text-white text-center lg:text-start">zx9 <br/> speaker</span>
                 <p className="text-center lg:text-start body-text text-white opacity-[75%]">Upgrade to premium speakers that are <br className="hidden md:block"/> phenomenally built to deliver truly remarkable <br className="hidden md:block"/> sound.</p>
-                <button className="button-tertiary lg:!bg-[#4c4c4c]">see product</button>
+                <NavLink to={'/product/zx9-speaker'}>
+                  <button className="button-tertiary lg:!bg-[#4c4c4c]">see product</button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -42,7 +45,9 @@ export default function Home() {
             <img src='/assets/home/desktop/image-speaker-zx7.jpg' className="absolute top-0 bottom-0 left-0 right-0 w-full h-full object-cover rounded-xl hidden lg:block"/>
             <div className="flex flex-col justify-center px-5 md:px-10 absolute top-0 bottom-0 my-auto mx-0">
               <span className="font-manrope uppercase text-[28px] tracking-[2px] text-black">zx7 speaker</span>
-              <button className="button-secondary w-max mt-5 lg:!bg-black lg:!text-white">see product</button>
+                <NavLink to={'/product/zx7-speaker'}>
+                  <button className="button-secondary w-max mt-5 lg:!bg-black lg:!text-white">see product</button>
+                </NavLink>
             </div>
           </div>
           <div className="flex flex-col md:flex-row md:items-stretch gap-10 md:gap-5">
@@ -51,7 +56,9 @@ export default function Home() {
             <img src='/assets/home/desktop/image-earphones-yx1.jpg' className="hidden lg:block rounded-xl w-[50%] h-auto"/>
             <div className="bg-gray-primary md:flex-1 md:h-auto md:flex md:flex-col md:items-start md:justify-center rounded-xl px-5 md:px-auto mt-5 md:mt-0 py-10 lg:px-20">
               <span className="font-manrope uppercase text-[28px] tracking-[2px] text-black">YX1 Earphones</span>
-              <button className="button-secondary mt-5 lg:!bg-black lg:!text-white">see product</button>
+              <NavLink to={'/product/yx1-earphones'}>
+                <button className="button-secondary mt-5 lg:!bg-black lg:!text-white">see product</button>
+              </NavLink>
             </div>
           </div>
         </div>
