@@ -16,7 +16,7 @@ const Earphones = () => {
         <div className='bg-[#191919] flex items-center justify-center py-5 md:py-16'>
             <h4 className='text-white'>earphones</h4>
         </div>
-        <div className='lg:w-[70%] lg:max-w-[1200px] lg:mx-auto'>
+        <div className='lg:w-[80%] lg:max-w-[1200px] lg:mx-auto'>
 
         <div className='px-5 py-10 md:py-20 md:px-10 flex flex-col gap-20'>
             {earphonesData.map((product, index) => {

@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className='px-5 lg:px-10 lg:flex lg:w-[70%] lg:max-w-[1200px] lg:mx-auto lg:gap-5'>
+    <div className='px-5 lg:px-10 lg:flex lg:w-[80%] lg:max-w-[1200px] lg:mx-auto lg:gap-5'>
         <img src='/assets/shared/mobile/image-best-gear.jpg' className='w-full h-auto rounded-lg md:hidden'/>
         <img src='/assets/shared/tablet/image-best-gear.jpg' className='w-full h-auto rounded-lg hidden md:block lg:hidden'/>
         <div className='flex flex-col lg:my-auto lg:!w-[50%] lg:shrink-0 lg:items-start'>

@@ -4,10 +4,10 @@ import { NavLink } from 'react-router'
 const Footer = () => {
   return (
     <div className='bg-black-secondary'>
-        <div className='mt-16 lg:w-[70%] lg:mx-auto lg:px-0 relative bg-black-secondary px-5 md:px-10 py-10 lg:py-16 flex flex-col gap-10 items-center justify-center md:items-start'>
+        <div className='mt-16 lg:w-[80%] lg:mx-auto lg:px-0 relative bg-black-secondary px-5 md:px-10 py-10 lg:py-16 flex flex-col gap-10 items-center justify-center md:items-start'>
             <div className='absolute top-0 bg-primary w-24 h-[4px] left-0 md:left-10 lg:left-0 md:mx-0 right-0 mx-auto my-0'></div>
-            <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center w-full'>
-                            <img src='/assets/shared/desktop/logo.svg' className='h-8 w-auto'/>
+            <div className='flex flex-col items-center md:items-start gap-5 lg:flex-row lg:justify-between lg:items-center w-full'>
+                <img src='/assets/shared/desktop/logo.svg' className='h-8 w-auto max-w-fit'/>
             <div className='flex flex-col md:flex-row gap-5 text-white items-center justify-center uppercase font-manrope text-[13px] leading-[25px] tracking-[2px]'>
                 <NavLink to="/" className='hover:text-primary'>Home</NavLink>
                 <NavLink to="/headphones" className='hover:text-primary'>Headphones</NavLink>

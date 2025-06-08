@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
         <div className="flex bg-[#191919] flex-col lg:flex-row lg:justify-start gap-5 items-center justify-center bg-[url('/assets/home/mobile/image-header.jpg')] md:!bg-[url('/assets/home/tablet/image-header.jpg')] lg:!bg-[url('/assets/home/desktop/image-hero.jpg')] bg-no-repeat bg-cover bg-bottom md:bg-contain h-[500px]">
-          <div className="flex flex-col gap-5 items-center lg:items-start justify-center lg:w-[70%] lg:max-w-[1200px] lg:mx-auto lg:px-10">
+          <div className="flex flex-col gap-5 items-center lg:items-start justify-center lg:w-[80%] lg:max-w-[1200px] lg:mx-auto lg:px-10">
             <span className="overline-text text-white opacity-[50%]">New Product</span>
             <span className="uppercase font-manrope text-[36px] md:text-[56px] leading-[40px] md:leading-[58px] tracking-[1.29px] md:tracking-[2px] font-bold text-white">XX99 MARK II <br/> Headphones</span>
             <p className="font-manrope text-[15px] leading-[25px] tracking-[0px] font-medium opacity-[75%] text-white text-center lg:text-start">Experience natural, lifelike audio and <br/> exceptional build quality made for the <br/> passionate music enthusiast.</p>
@@ -20,7 +20,7 @@ export default function Home() {
           </div>
           {/* <img src="/assets/home/desktop/image-hero.jpg" className=""/> */}
         </div>
-        <div className="w-full lg:w-[70%] lg:max-w-[1200px] lg:mx-auto">
+        <div className="w-full lg:w-[80%] lg:max-w-[1200px] lg:mx-auto">
         <ProductCategories/>
         <div className="px-5 md:px-10 flex flex-col gap-5 lg:gap-10">
           <div className="rounded-xl bg-primary bg-[url('/assets/home/desktop/pattern-circles.svg')] bg-no-repeat bg-bottom lg:bg-bottom-left lg:bg-contain bg-cover px-5 w-full relative">

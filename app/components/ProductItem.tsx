@@ -17,11 +17,11 @@ const ProductItem = ({...props}: ProductItemProps) => {
             <img src={props.desktopImageUrl} className='hidden lg:block w-full h-96 object-contain rounded-xl'/>
 
         </div>
-<div className={`flex flex-col gap-5 lg:w-[50%]`}>
+<div className={`flex flex-col items-center justify-center lg:items-start gap-5 lg:w-[50%]`}>
             {props.isNew &&         <span className='overline-text text-primary'>new product</span>
             }
         <span className='font-manrope text-[28px] uppercase block text-center lg:text-start text-black tracking-[1px] md:w-60'>{props.title}</span>
-        <p className='text-center lg:text-start body-text opacity-[50%] md:w-[70%] lg:w-full'>{props.description}</p>
+        <p className='text-center lg:text-start body-text opacity-[50%] md:w-[80%] lg:w-full'>{props.description}</p>
         <button className='button-primary w-max'>see product</button>
 </div>
     </div>
