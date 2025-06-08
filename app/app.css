@@ -1,8 +1,23 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&display=swap');
+
+@plugin "@iconify/tailwind4";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-manrope: "Manrope", sans-serif;
+  --font-lato: "Lato", sans-serif;
+    /* colors */
+
+  --color-primary: #D87D4A;
+  --color-secondary: #FBAF85;
+  --color-black: #000000;
+  --color-black-secondary: #101010;
+  --color-white: #FFFFFF;
+  --color-gray-primary: #F1F1F1;
+  --color-gray-secondary: #FAFAFA;
+
 }
 
 html,
@@ -13,3 +28,69 @@ body {
     color-scheme: dark;
   }
 }
+
+/* Typography */
+ h1{
+  @apply text-[56px] leading-[58px] uppercase font-bold font-manrope tracking-[2px];
+ }
+ 
+ h2{
+  @apply text-[40px] leading-[44px] uppercase font-bold font-manrope tracking-[1.5px];
+ }
+
+ h3{
+    @apply text-[32px] leading-[36px] uppercase font-bold font-manrope tracking-[1.15px];
+ }
+
+ h4{
+    @apply text-[28px] leading-[38px] uppercase font-bold font-manrope tracking-[2px];
+ }
+
+ h5{
+    @apply text-[24px] leading-[33px] uppercase font-bold font-manrope tracking-[1.7px];
+ }
+
+ h6{
+    @apply text-[18px] leading-[24px] uppercase font-bold font-manrope tracking-[1.3px];
+ }
+
+.overline-text{
+    @apply text-[14px] leading-[19px] uppercase font-normal font-manrope tracking-[10px];
+}
+
+.subtitle{
+    @apply text-[13px] leading-[25px] uppercase font-bold font-manrope tracking-[1px];
+}
+
+.body-text{
+    @apply text-[15px] leading-[25px] font-medium font-manrope;
+}
+
+/* Buttons */
+.button-primary{
+  @apply cursor-pointer bg-primary text-white font-manrope font-bold text-[13px] tracking-[1px] px-5 py-3 uppercase hover:bg-secondary transition-colors duration-300;
+}
+
+.button-secondary{
+  @apply cursor-pointer bg-transparent hover:bg-black text-black hover:text-white border border-black font-manrope font-bold text-[13px] tracking-[1px] px-5 py-3 uppercase transition-colors duration-300;
+}
+
+.button-tertiary{
+    @apply cursor-pointer bg-black text-white hover:text-white font-manrope font-bold text-[13px] tracking-[1px] px-5 py-3 uppercase hover:bg-white transition-colors duration-300;
+}
+
+.button-tertiary-text{
+  @apply bg-transparent text-black opacity-[50%] font-manrope font-bold text-[13px] tracking-[1px] uppercase hover:text-primary hover:opacity-[100%]
+}
+
+/* Form Elements
+.form-input{
+  label{
+    @apply text-black font-bold text-[12px] invalid:text-[] font-manrope tracking-[-0.21px]
+  }
+
+  input{
+    @apply w-full bg-white border border-[#CFCFCF] h-[16px] focus:outline-primary invalid:outline-[#CD2C2C] rounded-lg px-4
+  }
+} */
+
