@@ -1,10 +1,12 @@
 import React from 'react'
+import { NavLink } from 'react-router';
 
 interface SimilarProductProps {
     mobileImageUrl: string;
     tableImageUrl: string;
     desktopImageUrl: string;
     title: string;
+    slug: string;
 }
 
 const SimilarProduct = ({...props}: SimilarProductProps) => {
@@ -16,7 +18,9 @@ const SimilarProduct = ({...props}: SimilarProductProps) => {
             <img src={props.mobileImageUrl} className='w-full hidden lg:block h-full md:w-auto md:object-cover mx-auto rounded-xl'/>
         </div>
         <span className='font-manrope text-[24px] tracking-[1.71px] uppercase font-bold text-black'>{props.title}</span>
-        <button className='button-primary w-max'>see product</button>
+        <NavLink to={`/product/${props.slug}`}>
+            <button className='button-primary w-max'>see product</button>
+        </NavLink>
     </div>
   )
 }

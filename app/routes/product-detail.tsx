@@ -101,7 +101,7 @@ const ProductDetail = ({loaderData}: Route.ComponentProps) => {
             <div className='flex px-5 md:px-10 flex-col md:flex-row gap-5 mt-5'>
                 {loaderData?.others.map(otherProduct => {
                     return (
-                        <SimilarProduct tableImageUrl={otherProduct.image.tablet} desktopImageUrl={otherProduct.image.desktop} key={otherProduct.slug} title={otherProduct.name} mobileImageUrl={otherProduct.image.mobile}/>
+                        <SimilarProduct slug={otherProduct.slug} tableImageUrl={otherProduct.image.tablet} desktopImageUrl={otherProduct.image.desktop} key={otherProduct.slug} title={otherProduct.name} mobileImageUrl={otherProduct.image.mobile}/>
                     )
                 })}
             </div>
