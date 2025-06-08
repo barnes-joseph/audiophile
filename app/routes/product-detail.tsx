@@ -28,7 +28,7 @@ const ProductDetail = ({loaderData}: Route.ComponentProps) => {
 
     return (
     <div className='lg:w-[80%] lg:max-w-[1200px] lg:mx-auto'>
-        <button className='body-text text-black opacity-[50%] px-5 md:px-10 my-5' onClick={()=>navigate(-1)}>Go Back</button>
+        <button className='body-text cursor-pointer text-black opacity-[50%] px-5 md:px-10 my-5' onClick={()=>navigate(-1)}>Go Back</button>
         <section className='px-5 md:px-10 flex flex-col md:flex-row gap-5 md:gap-16 md:items-center mb-20'>
             <img src={loaderData?.image?.mobile} className='w-full md:hidden h-auto rounded-xl'/>
             <img src={loaderData?.image?.tablet} className='w-[40%] hidden md:block lg:hidden h-auto object-cover rounded-xl'/>
