@@ -6,5 +6,6 @@ export default [
         route("earphones", "routes/earphones.tsx"),
         route("headphones", "routes/headphones.tsx"),
         route("speakers", "routes/speakers.tsx"),
+        route("product/:slug", "routes/product-detail.tsx")
     ]),
 ] satisfies RouteConfig;

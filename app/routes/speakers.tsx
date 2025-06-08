@@ -21,7 +21,7 @@ const Speakers = () => {
             <div className='px-5 py-10 md:py-20 md:px-10 flex flex-col gap-20'>
                 {speakersData.map((product, index) => {
                     return (
-                        <ProductItem reversedescriptionOrder={index % 2 !== 0} description={product.description} isNew={product.new} desktopImageUrl={product.image.desktop} tabletImageUrl={product.image.tablet} mobileimageUrl={product.image.mobile} title={product.name} key={product.id}/>
+                        <ProductItem slug={product.slug} reversedescriptionOrder={index % 2 !== 0} description={product.description} isNew={product.new} desktopImageUrl={product.image.desktop} tabletImageUrl={product.image.tablet} mobileimageUrl={product.image.mobile} title={product.name} key={product.id}/>
                     )
                 })}
             </div>

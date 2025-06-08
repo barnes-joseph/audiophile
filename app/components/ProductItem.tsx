@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 interface ProductItemProps {
     isNew: boolean;
     mobileimageUrl: string;
@@ -6,6 +8,7 @@ interface ProductItemProps {
     title: string;
     description: string;
     reversedescriptionOrder: boolean;
+    slug: string;
 }
 
 const ProductItem = ({...props}: ProductItemProps) => {
@@ -22,7 +25,10 @@ const ProductItem = ({...props}: ProductItemProps) => {
             }
         <span className='font-manrope text-[28px] uppercase block text-center lg:text-start text-black tracking-[1px] md:w-60'>{props.title}</span>
         <p className='text-center lg:text-start body-text opacity-[50%] md:w-[80%] lg:w-full'>{props.description}</p>
-        <button className='button-primary w-max'>see product</button>
+        
+        <NavLink to={`/product/${props.slug}`}>
+            <button className='button-primary w-max'>see product</button>
+        </NavLink>
 </div>
     </div>
   )
