@@ -19,6 +19,7 @@
   "devDependencies": {
     "@iconify/json": "^2.2.346",
     "@iconify/tailwind4": "^1.0.6",
+    "@netlify/vite-plugin-react-router": "^1.0.1",
     "@react-router/dev": "^7.5.3",
     "@tailwindcss/vite": "^4.1.8",
     "@types/node": "^20",
