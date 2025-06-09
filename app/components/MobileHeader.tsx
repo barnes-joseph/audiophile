@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 
 const MobileHeader = ({
   setShowMenu,
@@ -20,7 +21,9 @@ const MobileHeader = ({
           className="h-4 w-fit"
         />
       </button>
-      <img src="/assets/shared/desktop/logo.svg" className="h-6 w-fit" />
+      <NavLink to={'/'}>
+         <img src="/assets/shared/desktop/logo.svg" className="h-6 w-fit" />
+      </NavLink>
       <button
       id={'cart-mobile'}
         onClick={(e) => {
