@@ -14,7 +14,7 @@ enum PaymentMethod{
 
 const externalFees = {
     shipping: 50,
-    vat: 1079
+    vatPercentage: 20
 }
 
 const Checkout = () => {
@@ -55,6 +55,10 @@ const Checkout = () => {
       0
     ) || 0;
   };
+
+  const computeVat = () => {
+    return (totalAmount() * externalFees.vatPercentage) / 100
+  }
 
   return (
     <div className="lg:w-[80%] lg:max-w-[1200px] lg:mx-auto p-5 md:p-10">
@@ -191,7 +195,7 @@ const Checkout = () => {
             Vat(Included)
           </span>
           <span className="uppercase font-manrope text-[18px] tracking-[0px] text-black">
-            {formatUSD(externalFees.vat)}
+            {formatUSD(computeVat())}
           </span>
         </div>
         <div className="flex justify-between items-center">
@@ -199,7 +203,7 @@ const Checkout = () => {
             Grand Total
           </span>
           <span className="uppercase font-manrope text-[18px] tracking-[0px] text-black">
-            {formatUSD(totalAmount() + externalFees.shipping + externalFees.vat)}
+            {formatUSD(totalAmount() + externalFees.shipping + computeVat())}
           </span>
         </div>
         <button type="submit" className="button-primary">continue & pay</button>
