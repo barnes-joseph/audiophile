@@ -5,13 +5,13 @@ interface BaseInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   value: string | number;
   error?: string;
-  onClick: ()=>void; // Add error prop to conditionally show errors
+  onClick: ()=>void;
 }
 
 const RadioInputComponent = React.forwardRef<HTMLInputElement, BaseInputProps>(
   ({ label, id, value, onClick, className = '', error, ...props }, ref) => {
     return (
-      <div onClick={onClick} className={`w-full flex items-center gap-5 bg-white border h-[40px] rounded-lg px-4 hover:border-primary border-[#CFCFCF]`}>
+      <div onClick={onClick} className={`w-full cursor-pointer flex items-center gap-5 bg-white border h-[40px] rounded-lg px-4 hover:border-primary border-[#CFCFCF]`}>
         <input
           type='radio'
           ref={ref}
