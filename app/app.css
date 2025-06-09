@@ -22,7 +22,7 @@
 
 html,
 body {
-  @apply bg-white;
+  @apply bg-[#f2f2f2];
 
 }
 
@@ -80,14 +80,18 @@ body {
   @apply bg-transparent text-black opacity-[50%] font-manrope font-bold text-[13px] tracking-[1px] uppercase hover:text-primary hover:opacity-[100%]
 }
 
-/* Form Elements
-.form-input{
-  label{
-    @apply text-black font-bold text-[12px] invalid:text-[] font-manrope tracking-[-0.21px]
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  input{
-    @apply w-full bg-white border border-[#CFCFCF] h-[16px] focus:outline-primary invalid:outline-[#CD2C2C] rounded-lg px-4
-  }
-} */
+.animate-fade-in {
+  animation: fade-in 0.3s ease forwards;
+}
 

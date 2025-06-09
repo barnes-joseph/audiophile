@@ -1,6 +1,7 @@
 import { NavLink } from "react-router";
 import type { Route } from "./+types/home";
 import ProductCategories from "~/components/ProductCategories";
+import About from "~/components/About";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,13 +18,14 @@ export default function Home() {
             <span className="overline-text text-white opacity-[50%]">New Product</span>
             <span className="uppercase font-manrope text-[36px] md:text-[56px] leading-[40px] md:leading-[58px] tracking-[1.29px] md:tracking-[2px] font-bold text-white">XX99 MARK II <br/> Headphones</span>
             <p className="font-manrope text-[15px] leading-[25px] tracking-[0px] font-medium opacity-[75%] text-white text-center lg:text-start">Experience natural, lifelike audio and <br/> exceptional build quality made for the <br/> passionate music enthusiast.</p>
-            <button className="button-primary !px-8">See Product</button>
+            <NavLink to={`/product/xx99-mark-two-headphones`}>
+              <button className="button-primary !px-8">See Product</button>
+            </NavLink>
           </div>
-          {/* <img src="/assets/home/desktop/image-hero.jpg" className=""/> */}
         </div>
-        <div className="w-full lg:w-[80%] lg:max-w-[1200px] lg:mx-auto">
+        <div className="w-full lg:w-[80%] lg:max-w-[1200px] lg:mx-auto mb-20">
         <ProductCategories/>
-        <div className="px-5 md:px-10 flex flex-col gap-5 lg:gap-10">
+        <div className="px-5 md:px-10 flex flex-col gap-5 lg:gap-10 mt-20">
           <div className="rounded-xl bg-primary bg-[url('/assets/home/desktop/pattern-circles.svg')] bg-no-repeat bg-bottom lg:bg-bottom-left lg:bg-contain bg-cover px-5 w-full relative">
             <div className="py-16 flex flex-col items-center gap-5 lg:flex-row lg:gap-40 lg:pb-0 lg:pt-32 lg:items-start lg:justify-center">
               <img src='/assets/home/mobile/image-speaker-zx9.png' className="h-32 w-auto mx-auto md:hidden"/>
@@ -63,6 +65,8 @@ export default function Home() {
           </div>
         </div>
         </div>
+        <About/>
+
     </div>
   );
 }

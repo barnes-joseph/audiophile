@@ -21,7 +21,7 @@ export const productCategories: ProductCategoryProps[] = [
   ]
 const ProductCategories = () => {
   return (
-    <div className="flex flex-col md:flex-row md:gap-5 gap-20 items-center justify-center px-5 md:px-10 py-24">
+    <div className="flex flex-col md:flex-row md:gap-5 gap-20 items-center justify-center px-5 md:px-10 pt-24">
         {productCategories.map((category, index) => {
           return (
             <ProductCategory key={index} {...category}/>
