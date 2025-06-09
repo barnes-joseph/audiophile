@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
-import ProductCategories, { productCategories } from './ProductCategories'
+import { productCategories } from './ProductCategories'
 import { NavLink } from 'react-router'
-import { modalTriggerIds, useModal } from '~/providers/modalProvider';
+import { useModal } from '~/providers/modalProvider';
 import { useClickOutside } from '~/hooks/useClickOutside';
 
 const MobileMenu = () => {

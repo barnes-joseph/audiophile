@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { modalTriggerIds, useModal } from "~/providers/modalProvider";
+import { useModal } from "~/providers/modalProvider";
 
 const Header = () => {
   const { setShowCart, showCart, setTriggerId } = useModal();

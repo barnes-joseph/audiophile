@@ -3,7 +3,7 @@ import { formatUSD } from "~/utils/currency-formatter";
 import NumberInput from "./NumberInput";
 import { useCart, type CartProduct } from "~/providers/cartProvider";
 import { useNavigate } from "react-router";
-import { modalTriggerIds, useModal } from "~/providers/modalProvider";
+import { useModal } from "~/providers/modalProvider";
 import { useClickOutside } from "~/hooks/useClickOutside";
 
 const Cart = () => {

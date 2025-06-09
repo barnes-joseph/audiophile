@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useNavigate } from "react-router";
 import { useCart } from "~/providers/cartProvider";
 import { useModal } from "~/providers/modalProvider";
@@ -55,16 +55,22 @@ const ThankYou = () => {
               </div>
             );
           })}
-          <hr className="border border-black/8" />
           {
-            !viewMore && 
-            <span className="text-[12px] text-center block mt-2 font-bold font-manrope tracking-[-0.21px] text-black opacity-[50%]">
-            and {cart?.length - 1} other item(s)
-          </span>
+            cart?.length > 1 && 
+            <Fragment>
+                <hr className="border border-black/8" />
+            {
+                !viewMore && 
+                <span className="text-[12px] text-center block mt-2 font-bold font-manrope tracking-[-0.21px] text-black opacity-[50%]">
+                and {cart?.length - 1} other item(s)
+            </span>
+            }
+            <button onClick={()=>setViewMore(!viewMore)} className='hidden mx-auto lg:block text-[12px] text-center mt-2 font-bold font-manrope tracking-[-0.21px] text-black opacity-[50%]'>
+                View {viewMore ? 'Less' : 'More'}
+            </button>
+
+            </Fragment>
           }
-          <button onClick={()=>setViewMore(!viewMore)} className='hidden mx-auto lg:block text-[12px] text-center mt-2 font-bold font-manrope tracking-[-0.21px] text-black opacity-[50%]'>
-            View {viewMore ? 'Less' : 'More'}
-          </button>
         </div>
         <div className="rounded-b-xl md:rounded-b-none md:!rounded-r-xl  p-4 bg-black flex flex-col md:justify-center gap-2">
           <span className="body-text uppercase text-white opacity-[50%]">

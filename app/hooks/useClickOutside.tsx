@@ -10,7 +10,7 @@ export const useClickOutside = (
         const target = event.target as HTMLElement | null;
 
         const clickedInsideRef = ref?.current?.contains(target);
-        const clickedInsideTrigger = target?.closest(`#${triggerId}`);
+        const clickedInsideTrigger = triggerId ? target?.closest(`#${triggerId}`) : true;
         if (clickedInsideRef || clickedInsideTrigger) {
             return;
         }

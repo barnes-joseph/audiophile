@@ -1,5 +1,3 @@
-import React from "react";
-import { modalTriggerIds } from "~/providers/modalProvider";
 
 const MobileHeader = ({
   setShowMenu,

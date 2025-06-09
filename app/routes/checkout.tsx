@@ -111,6 +111,7 @@ const Checkout = () => {
                   {paymentOptions.map((option) => {
                     return (
                       <RadioInputComponent
+                      key={option.value}
                         readOnly
                         onClick={()=>{handleChange('paymentMethod', option.value)}}
                         name="payment-method"
