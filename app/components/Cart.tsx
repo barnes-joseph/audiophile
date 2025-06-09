@@ -18,7 +18,9 @@ const Cart = () => {
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement | null>(null);
 
-  useClickOutside(ref, ()=>setShowCart(false));
+  useClickOutside(ref, () => {
+    ref?.current?.classList.contains("visible") && setShowCart(false);
+  });
 
   const computeTotal = (cart: CartProduct[]) => {
     return (
@@ -35,7 +37,10 @@ const Cart = () => {
   }, [cart]);
 
   return (
-    <div ref={ref} className="rounded-xl bg-white w-full md:w-fit md:min-w-96 h-fit p-5">
+    <div
+      ref={ref}
+      className="rounded-xl bg-white w-full md:w-fit md:min-w-96 h-fit p-5"
+    >
       <div className="flex justify-between items-center">
         <span className="text-[18px] font-manrope font-bold tracking-[1.29px]">
           Cart ({cart?.length || 0})

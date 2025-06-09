@@ -82,7 +82,6 @@ const CartProvider = ({children}: {children: ReactNode}) => {
 
   useEffect(()=>{
     const existingCart = localStorage.getItem('cart');
-    console.log(existingCart);
     if(existingCart){
         setCart(JSON.parse(existingCart));
     }
