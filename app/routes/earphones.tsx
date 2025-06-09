@@ -13,7 +13,7 @@ export function meta({}: Route.MetaArgs) {
 const earphonesData = productData.filter(product => product.category === 'earphones').sort((a, b) => b.new ? 1 : -1);
 const Earphones = () => {
   return (
-    <div>
+    <div className='bg-white'>
         <div className='bg-[#191919] flex items-center justify-center py-5 md:py-16'>
             <h4 className='text-white'>earphones</h4>
         </div>

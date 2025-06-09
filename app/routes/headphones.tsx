@@ -15,7 +15,7 @@ const headphonesData = productData.filter(product => product.category === 'headp
 const Headphones = () => {
 
   return (
-    <div>
+    <div className='bg-white'>
         <div className='bg-[#191919] flex items-center justify-center py-5 md:py-16'>
             <h4 className='text-white'>headphones</h4>
         </div>

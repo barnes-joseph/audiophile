@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router'
+import { useCart } from '~/providers/cartProvider'
+import { useModal } from '~/providers/modalProvider';
 
 const Header = () => {
+    const {setShowCart, showCart} = useModal();
   return (
 <div className='hidden sticky top-0 left-0 z-10 lg:block bg-[#191919]'>
         <div className='w-[80%] max-w-[1200px] px-10 mx-auto flex justify-between items-center py-7 border-b border-[#979797]/10'>
@@ -12,7 +15,9 @@ const Header = () => {
                 <NavLink to="/speakers" className='hover:text-primary'>Speakers</NavLink>
                 <NavLink to="/earphones" className='hover:text-primary'>Earphones</NavLink>
             </div>
-            <img src='/assets/shared/desktop/icon-cart.svg' className='h-5 w-fit'/>
+            <button onClick={()=>setShowCart(!showCart)}>
+                <img src='/assets/shared/desktop/icon-cart.svg' className='h-5 w-fit'/>
+            </button>
         </div>
     </div>  )
 }

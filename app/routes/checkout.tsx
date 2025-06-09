@@ -12,10 +12,16 @@ enum PaymentMethod{
     Cash
 }
 
+const externalFees = {
+    shipping: 50,
+    vat: 1079
+}
+
 const Checkout = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
-  const {setShowThankYou} = useModal()
+  const {setShowThankYou} = useModal();
+  
   const paymentOptions = [
     { label: "e-Money", value: PaymentMethod.EMoney },
     { label: "Cash on Delivery", value: PaymentMethod.Cash },
@@ -105,6 +111,7 @@ const Checkout = () => {
                   {paymentOptions.map((option) => {
                     return (
                       <RadioInputComponent
+                        readOnly
                         onClick={()=>{handleChange('paymentMethod', option.value)}}
                         name="payment-method"
                         id={option.label}
@@ -120,8 +127,8 @@ const Checkout = () => {
             {
                 checkoutForm.paymentMethod === PaymentMethod.EMoney &&
                 <Fragment>
-                    <InputComponent readOnly required={checkoutForm.paymentMethod === PaymentMethod.EMoney} onChange={(event)=> handleChange('eMoneyNumber', event.target.value)} pattern="\d{9}" placeholder="238521993" label="e-Money Number" type="text" />
-                    <InputComponent readOnly required={checkoutForm.paymentMethod === PaymentMethod.EMoney} onChange={(event)=> handleChange('eMoneyPin', event.target.value)} pattern="\d{4}" placeholder="6891" label="e-Money Pin" type="text" />
+                    <InputComponent required={checkoutForm.paymentMethod === PaymentMethod.EMoney} onChange={(event)=> handleChange('eMoneyNumber', event.target.value)} pattern="\d{9}" placeholder="238521993" label="e-Money Number" type="text" />
+                    <InputComponent required={checkoutForm.paymentMethod === PaymentMethod.EMoney} onChange={(event)=> handleChange('eMoneyPin', event.target.value)} pattern="\d{4}" placeholder="6891" label="e-Money Pin" type="text" />
                 </Fragment>
             }
             {checkoutForm.paymentMethod === PaymentMethod.Cash && (
@@ -175,7 +182,7 @@ const Checkout = () => {
             Shipping
           </span>
           <span className="uppercase font-manrope text-[18px] tracking-[0px] text-black">
-            {formatUSD(totalAmount())}
+            {formatUSD(externalFees.shipping)}
           </span>
         </div>
         <div className="flex justify-between items-center">
@@ -183,7 +190,7 @@ const Checkout = () => {
             Vat(Included)
           </span>
           <span className="uppercase font-manrope text-[18px] tracking-[0px] text-black">
-            {formatUSD(totalAmount())}
+            {formatUSD(externalFees.vat)}
           </span>
         </div>
         <div className="flex justify-between items-center">
@@ -191,7 +198,7 @@ const Checkout = () => {
             Grand Total
           </span>
           <span className="uppercase font-manrope text-[18px] tracking-[0px] text-black">
-            {formatUSD(totalAmount())}
+            {formatUSD(totalAmount() + externalFees.shipping + externalFees.vat)}
           </span>
         </div>
         <button type="submit" className="button-primary">continue & pay</button>

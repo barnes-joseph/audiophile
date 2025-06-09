@@ -1,9 +1,10 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useReducer, useRef } from "react";
 import { formatUSD } from "~/utils/currency-formatter";
 import NumberInput from "./NumberInput";
 import { useCart, type CartProduct } from "~/providers/cartProvider";
 import { useNavigate } from "react-router";
 import { useModal } from "~/providers/modalProvider";
+import { useClickOutside } from "~/hooks/useClickOutside";
 
 const Cart = () => {
   const {
@@ -13,8 +14,11 @@ const Cart = () => {
     clearCart,
     addToCart,
   } = useCart();
-  const { dismissAllModals } = useModal();
+  const { setShowCart, dismissAllModals } = useModal();
   const navigate = useNavigate();
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useClickOutside(ref, ()=>setShowCart(false));
 
   const computeTotal = (cart: CartProduct[]) => {
     return (
@@ -31,7 +35,7 @@ const Cart = () => {
   }, [cart]);
 
   return (
-    <div className="rounded-xl bg-white w-full md:w-fit md:min-w-96 h-fit p-5">
+    <div ref={ref} className="rounded-xl bg-white w-full md:w-fit md:min-w-96 h-fit p-5">
       <div className="flex justify-between items-center">
         <span className="text-[18px] font-manrope font-bold tracking-[1.29px]">
           Cart ({cart?.length || 0})
@@ -50,13 +54,13 @@ const Cart = () => {
             return (
               <div key={product.slug} className="flex flex-col gap-5">
                 <div className="flex gap-5 items-center">
-                  <div className="rounded-xl w-28 h-16 bg-gray-primary">
+                  <div className="rounded-xl w-28 h-24 bg-gray-primary">
                     <img
                       src={product.image}
                       className="w-full h-full object-cover rounded-xl"
                     />
                   </div>
-                  <div className="flex flex-col shrink-0">
+                  <div className="flex flex-col shrink-0 md:mr-10">
                     <span className="uppercase font-manrope text-[15px] leading-[25px] tracking-[0px] text-black">
                       {product.name}
                     </span>
@@ -64,7 +68,7 @@ const Cart = () => {
                       {formatUSD(product.price)}
                     </span>
                   </div>
-                  <div className="lg:w-32 lg:ml-10">
+                  <div className="md:w-32 md:ml-auto">
                     <NumberInput
                       onChange={(value) =>
                         addToCart({ ...product, quantity: value })

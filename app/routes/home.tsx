@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   
   return (
-    <div>
+    <div className='bg-white'>
         <div className="flex bg-[#191919] flex-col lg:flex-row lg:justify-start gap-5 items-center justify-center bg-[url('/assets/home/mobile/image-header.jpg')] md:!bg-[url('/assets/home/tablet/image-header.jpg')] lg:!bg-[url('/assets/home/desktop/image-hero.jpg')] bg-no-repeat bg-cover bg-bottom md:bg-contain h-[500px]">
           <div className="flex flex-col gap-5 items-center lg:items-start justify-center lg:w-[80%] lg:max-w-[1200px] lg:mx-auto lg:px-10">
             <span className="overline-text text-white opacity-[50%]">New Product</span>

@@ -40,7 +40,7 @@ const ProductDetail = ({ loaderData }: Route.ComponentProps) => {
   const { showToast } = useToast();
 
   return (
-    <div>
+    <div className="bg-white">
       <div className="lg:w-[80%] lg:max-w-[1200px] lg:mx-auto mb-20">
         <button
           className="body-text cursor-pointer text-black opacity-[50%] px-5 md:px-10 my-5"
