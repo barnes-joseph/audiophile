@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
 import ProductCategories, { productCategories } from './ProductCategories'
 import { NavLink } from 'react-router'
-import { useModal } from '~/providers/modalProvider';
+import { modalTriggerIds, useModal } from '~/providers/modalProvider';
 import { useClickOutside } from '~/hooks/useClickOutside';
 
 const MobileMenu = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const {dismissAllModals} = useModal();
-  useClickOutside(ref, dismissAllModals);
+  const {dismissAllModals, triggerId} = useModal();
+  useClickOutside(ref, dismissAllModals, triggerId);
   return (
     <div className='bg-white w-full rounded-b-xl flex flex-col md:flex-row gap-20 px-5 py-20 md:py-20 items-center justify-center'>
         {productCategories.map((category, index) => {

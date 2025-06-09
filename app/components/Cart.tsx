@@ -3,7 +3,7 @@ import { formatUSD } from "~/utils/currency-formatter";
 import NumberInput from "./NumberInput";
 import { useCart, type CartProduct } from "~/providers/cartProvider";
 import { useNavigate } from "react-router";
-import { useModal } from "~/providers/modalProvider";
+import { modalTriggerIds, useModal } from "~/providers/modalProvider";
 import { useClickOutside } from "~/hooks/useClickOutside";
 
 const Cart = () => {
@@ -14,13 +14,13 @@ const Cart = () => {
     clearCart,
     addToCart,
   } = useCart();
-  const { setShowCart, dismissAllModals } = useModal();
+  const { setShowCart, dismissAllModals, triggerId } = useModal();
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement | null>(null);
 
   useClickOutside(ref, () => {
-    ref?.current?.classList.contains("visible") && setShowCart(false);
-  });
+    ref?.current?.closest(".visible") && setShowCart(false);
+  }, triggerId);
 
   const computeTotal = (cart: CartProduct[]) => {
     return (

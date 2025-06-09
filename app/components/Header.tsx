@@ -1,8 +1,8 @@
 import { NavLink } from "react-router";
-import { useModal } from "~/providers/modalProvider";
+import { modalTriggerIds, useModal } from "~/providers/modalProvider";
 
 const Header = () => {
-  const { setShowCart, showCart } = useModal();
+  const { setShowCart, showCart, setTriggerId } = useModal();
   return (
     <div className="hidden sticky top-0 left-0 z-10 lg:block bg-[#191919]">
       <div className="w-[80%] max-w-[1200px] px-10 mx-auto flex justify-between items-center py-7 border-b border-[#979797]/10">
@@ -22,8 +22,10 @@ const Header = () => {
           </NavLink>
         </div>
         <button
+          id='cart-desktop'
           className="cursor-pointer"
           onClick={(e) => {
+            setTriggerId('cart-desktop');
             setShowCart(!showCart);
           }}
         >

@@ -5,11 +5,11 @@ import { Outlet } from "react-router";
 import Footer from "./Footer";
 
 const LayoutContent = () => {
-    const {showCart, setShowCart, setShowMenu, showMenu} = useModal();
+    const {showCart, setShowCart, setShowMenu, showMenu, setTriggerId} = useModal();
   return (
     <div className='relative'>
         <Header/>
-        <MobileHeader showCart={showCart} setShowCart={setShowCart} showMenu={showMenu} setShowMenu={setShowMenu}/>
+        <MobileHeader setTriggerId={setTriggerId} showCart={showCart} setShowCart={setShowCart} showMenu={showMenu} setShowMenu={setShowMenu}/>
         <Outlet/>
         <div className='mt-20'>
           <Footer/>
